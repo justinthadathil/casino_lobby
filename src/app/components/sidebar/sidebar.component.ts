@@ -12,7 +12,7 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-app"
   },
   {
-    path: "/icons",
+    path: "/games",
     title: "All Games",
     icon: "icon-controller"
   }

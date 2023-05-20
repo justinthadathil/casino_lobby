@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
 
 import { DashboardComponent } from "../pages/dashboard/dashboard.component";
-import { IconsComponent } from "../pages/icons/icons.component";
+import { gamesComponent } from "../pages/games/games.component";
 
 export const AdminLayoutRoutes: Routes = [
   {
@@ -9,7 +9,7 @@ export const AdminLayoutRoutes: Routes = [
     component: DashboardComponent
   },
   {
-    path: "icons",
-    component: IconsComponent
+    path: "games",
+    component: gamesComponent
   }
 ];
