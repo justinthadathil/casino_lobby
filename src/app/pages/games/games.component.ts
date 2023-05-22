@@ -19,10 +19,20 @@ export class gamesComponent implements OnInit {
   }
 
   getAllGames(){
-    this.casioServiceService.getGames().subscribe((data: any) => {
-      this.allGamesList = Object.keys(data).map((key) => data[key]);
-      this.showLoader = false;
-    });
+    let allGames = []
+    this.casioServiceService.getAllData().subscribe({
+      next: (data)=>{
+        let trimData = data.casino.games;
+        Object.entries(trimData).forEach(([key, val]) => {
+          allGames.push(val)
+        });
+      },
+      error:(error) => {console.log(error)},
+      complete:()=>{
+        this.allGamesList = allGames;
+        this.showLoader = false;
+      }
+    })
   }
 
   getWidth(){
