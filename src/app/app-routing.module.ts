@@ -17,7 +17,7 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        loadChildren: () => import ("./admin-layout/admin-layout.module").then(m => m.AdminLayoutModule)
+        loadChildren: () => import("./admin-layout/admin-layout.module").then(m => m.AdminLayoutModule)
       }
     ]
   },
@@ -31,10 +31,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes, {
-      useHash: true
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
